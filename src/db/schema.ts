@@ -4,7 +4,7 @@ export const riderStatusEnum = pgEnum('rider_statuses', ['dispatched']);
 
 export const dispatchesTable = pgTable('dispatches', {
   id: uuid('id').primaryKey().defaultRandom(),
-  orderId: uuid('order_id').primaryKey(),
+  orderId: uuid('order_id').notNull(),
   customerName: varchar('customerName', { length: 100 }).notNull(),
   item: varchar('item', { length: 100 }).notNull(),
   riderStatus: riderStatusEnum('rider_status').notNull().default('dispatched'),
