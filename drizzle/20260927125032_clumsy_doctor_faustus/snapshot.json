@@ -1,0 +1,113 @@
+{
+  "version": "8",
+  "dialect": "postgres",
+  "id": "e9091cb9-f2f1-471d-92a7-8d96a858c290",
+  "prevIds": [
+    "00000000-0000-0000-0000-000000000000"
+  ],
+  "ddl": [
+    {
+      "values": [
+        "dispatched"
+      ],
+      "name": "rider_statuses",
+      "entityType": "enums",
+      "schema": "public"
+    },
+    {
+      "isRlsEnabled": false,
+      "name": "dispatches",
+      "entityType": "tables",
+      "schema": "public"
+    },
+    {
+      "type": "uuid",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": "gen_random_uuid()",
+      "generated": null,
+      "identity": null,
+      "name": "id",
+      "entityType": "columns",
+      "schema": "public",
+      "table": "dispatches"
+    },
+    {
+      "type": "uuid",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "order_id",
+      "entityType": "columns",
+      "schema": "public",
+      "table": "dispatches"
+    },
+    {
+      "type": "varchar(100)",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "customerName",
+      "entityType": "columns",
+      "schema": "public",
+      "table": "dispatches"
+    },
+    {
+      "type": "varchar(100)",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "name": "item",
+      "entityType": "columns",
+      "schema": "public",
+      "table": "dispatches"
+    },
+    {
+      "type": "rider_statuses",
+      "typeSchema": "public",
+      "notNull": true,
+      "dimensions": 0,
+      "default": "'dispatched'",
+      "generated": null,
+      "identity": null,
+      "name": "rider_status",
+      "entityType": "columns",
+      "schema": "public",
+      "table": "dispatches"
+    },
+    {
+      "type": "timestamp",
+      "typeSchema": null,
+      "notNull": false,
+      "dimensions": 0,
+      "default": "now()",
+      "generated": null,
+      "identity": null,
+      "name": "created_at",
+      "entityType": "columns",
+      "schema": "public",
+      "table": "dispatches"
+    },
+    {
+      "columns": [
+        "id"
+      ],
+      "nameExplicit": false,
+      "name": "dispatches_pkey",
+      "schema": "public",
+      "table": "dispatches",
+      "entityType": "pks"
+    }
+  ],
+  "renames": []
+}
